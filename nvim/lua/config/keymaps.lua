@@ -1,21 +1,13 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
--- set leader key to space
-vim.g.mapleader = " "
+-- Add any additional keymaps hereb
+--
 
-local keymap = vim.keymap -- for conciseness
+local function set_key(binding, command)
+  vim.keymap.set("n", binding, command, { silent = true })
+end
 
----------------------
--- General Keymaps
----------------------
-
--- delete single character without copying into register
-keymap.set("n", "x", '"_x')
-
-keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-
-keymap.set("n", "<c-h>", ":TmuxNavigateLeft<cr>", { silent = true, noremap = true })
-keymap.set("n", "<c-l>", ":TmuxNavigateRight<cr>", { silent = true, noremap = true })
-keymap.set("n", "<c-j>", ":TmuxNavigateDown<cr>", { silent = true, noremap = true })
-keymap.set("n", "<c-k>", ":TmuxNavigateUp<cr>", { silent = true, noremap = true })
+set_key("<C-J>", ":TmuxNavigateDown<CR>")
+set_key("<C-K>", ":TmuxNavigateUp<CR>")
+set_key("<C-H>", ":TmuxNavigateLeft<CR>")
+set_key("<C-L>", ":TmuxNavigateRight<CR>")
