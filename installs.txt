@@ -212,3 +212,4 @@ lapce
 rio
 utm
 wezterm
+btop
