@@ -22,7 +22,7 @@
                 {
                     "foreground": "p:yellow",
                     "style": "plain",
-                    "template": "{{ .UserName }}@{{ .HostName }} ",
+                    "template": "{{ .UserName }}<p:white>@</><p:cyan>{{ .HostName }}</> ",
                     "type": "session"
                 },
                 {
