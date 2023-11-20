@@ -20,6 +20,11 @@
             "newline": true,
             "segments": [
                 {
+                    "type": "os",
+                    "style": "plain",
+                    "template": "{{ .Icon }} "
+                },
+                {
                     "foreground": "p:yellow",
                     "style": "plain",
                     "template": "{{ .UserName }}<p:white>@</><p:cyan>{{ .HostName }}</> ",
@@ -58,7 +63,7 @@
                         "always_enabled": true
                     },
                     "style": "plain",
-                    "template": "{{ if gt .Code 0 }}<p:red>({{ .Code }}) </>{{ else }}<p:green>({{ .Code }}) </>{{ end }}> ",
+                    "template": "{{ if gt .Code 0 }}<p:red>({{ .Code }} {{ reason .Code }}) </>{{ else }}<p:green>({{ .Code }}) </>{{ end }}> ",
                     "type": "status"
                 }
             ],
